@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGem Team Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Import modern font */
+
+        body {
+            font-family: 'Roboto', sans-serif; /* Use modern font */
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255); /* Change background color to white */
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full screen height */
+            margin: auto;
+            overflow: hidden; /* Hide overflow for animation */
+            background-color: rgb(255, 255, 255); /* White background for slideshow */
+        }
+        .slides {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Animation for transition */
+            opacity: 0; /* Start with slides hidden */
+        }
+        .slides.active {
+            display: block;
+            opacity: 1; /* Show active slide */
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Align content to the right */
+            padding-right: 20px; /* Add padding for better alignment */
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: green; /* Green color for arrows */
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 128, 0, 0.8); /* Green background on hover */
+        }
+        .dot-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: transparent; /* Transparent background for dot container */
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: rgba(0, 128, 0, 0.5); /* Translucent green dots */
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: green; /* Solid green for active and hover */
+        }
+        .section {
+            padding: 20px;
+            text-align: left; /* Change text alignment to left */
+            background-color: white; /* White background for sections */
+        }
+        .section h2 {
+            text-align: left; /* Change heading alignment to left */
+            color: green; /* Green color for headings */
+        }
+        .card-container {
+            display: flex;
+            justify-content: flex-start; /* Align cards to the left */
+            flex-wrap: wrap;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px; /* Increase roundedness */
+            padding: 16px;
+            text-align: left; /* Change text alignment to left */
+            margin: 10px;
+            width: 200px;
+            background-color: #f5f5dc; /* Tan/Beige background for cards */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add drop shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+        }
+        .card:hover {
+            transform: translateY(-10px); /* Slightly lift the card on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px; /* Increase roundedness */
+        }
+        .card h3 {
+            margin: 10px 0 5px;
+            color: green; /* Green color for card titles */
+        }
+        .card p {
+            margin: 5px 0;
+            color: green; /* Green color for card text */
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="slides">
+        <div class="slide" style="background-image: url('landscape.jpg');">
+            <div class="card">
+                <h3>Meet the Team!</h3>
+                <p>Welcome to the iGEM Guelph team page. We are excited to share our journey with you!</p>
+            </div>
+        </div>
+    </div>
+    <div class="slides">
+        <div class="slide" style="background-image: url('landscape.jpg');">
+            <div class="card">
+                <h3>Executive 1</h3>
+                <p>Description of Executive 1</p>
+            </div>
+        </div>
+    </div>
+    <div class="slides">
+        <div class="slide" style="background-image: url('landscape.jpg');">
+            <div class="card">
+                <h3>Executive 2</h3>
+                <p>Description of Executive 2</p>
+            </div>
+        </div>
+    </div>
+    <div class="slides">
+        <div class="slide" style="background-image: url('landscape.jpg');">
+            <div class="card">
+                <h3>Executive 3</h3>
+                <p>Description of Executive 3</p>
+            </div>
+        </div>
+    </div>
+    <div class="slides">
+        <div class="slide" style="background-image: url('landscape.jpg');">
+            <div class="card">
+                <h3>Executive 4</h3>
+                <p>Description of Executive 4</p>
+            </div>
+        </div>
+    </div>
+    <div class="slides">
+        <div class="slide" style="background-image: url('landscape.jpg');">
+            <div class="card">
+                <h3>Executive 5</h3>
+                <p>Description of Executive 5</p>
+            </div>
+        </div>
+    </div>
+    <div class="slides">
+        <div class="slide" style="background-image: url('landscape.jpg');">
+            <div class="card">
+                <h3>Executive 6</h3>
+                <p>Description of Executive 6</p>
+            </div>
+        </div>
+    </div>
+    <div class="slides">
+        <div class="slide" style="background-image: url('landscape.jpg');">
+            <div class="card">
+                <h3>Executive 7</h3>
+                <p>Description of Executive 7</p>
+            </div>
+        </div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+</div>
+
+<div class="section">
+    <h2>Advisors</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="jeff.png" alt="Advisor 1">
+            <h3>Advisor 1</h3>
+            <p>Position</p>
+        </div>
+        <div class="card">
+            <img src="jeff.png" alt="Advisor 2">
+            <h3>Advisor 2</h3>
+            <p>Position</p>
+        </div>
+        <div class="card">
+            <img src="jeff.png" alt="Advisor 3">
+            <h3>Advisor 3</h3>
+            <p>Position</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Wet Lab</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="jeff.png" alt="Wet Lab Member 1">
+            <h3>Wet Lab Member 1</h3>
+            <p>Position</p>
+        </div>
+        <div class="card">
+            <img src="jeff.png" alt="Wet Lab Member 2">
+            <h3>Wet Lab Member 2</h3>
+            <p>Position</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Dry Lab</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="jeff.png" alt="Dry Lab Member 1">
+            <h3>Dry Lab Member 1</h3>
+            <p>Position</p>
+        </div>
+        <div class="card">
+            <img src="jeff.png" alt="Dry Lab Member 2">
+            <h3>Dry Lab Member 2</h3>
+            <p>Position</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Business</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="jeff.png" alt="Modelling Member 1">
+            <h3>Modelling Member 1</h3>
+            <p>Position</p>
+        </div>
+        <div class="card">
+            <img src="jeff.png" alt="Modelling Member 2">
+            <h3>Modelling Member 2</h3>
+            <p>Position</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Collaboration</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="jeff.png" alt="HP Member 1">
+            <h3>HP Member 1</h3>
+            <p>Position</p>
+        </div>
+        <div class="card">
+            <img src="jeff.png" alt="HP Member 2">
+            <h3>HP Member 2</h3>
+            <p>Position</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Web Design</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="jeff.png" alt="Wiki Member 1">
+            <h3>Wiki Member 1</h3>
+            <p>Position</p>
+        </div>
+        <div class="card">
+            <img src="jeff.png" alt="Wiki Member 2">
+            <h3>Wiki Member 2</h3>
+            <p>Position</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].classList.add("active");
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+
+</body>
+</html>
+
+
