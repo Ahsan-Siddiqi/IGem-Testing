@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Import modern font */
+
+body {
+    font-family: 'Roboto', sans-serif; /* Use modern font */
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255); /* Change background color to white */
+}
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    margin: auto;
+    overflow: hidden; /* Hide overflow for animation */
+    background-color: rgb(255, 255, 255); /* White background for slideshow */
+}
+.slides {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Animation for transition */
+    opacity: 0; /* Start with slides hidden */
+}
+.slides.active {
+    display: block;
+    opacity: 1; /* Show active slide */
+}
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align content to the right */
+    padding-right: 20px; /* Add padding for better alignment */
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: green; /* Green color for arrows */
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 128, 0, 0.8); /* Green background on hover */
+}
+.dot-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: transparent; /* Transparent background for dot container */
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: rgba(0, 128, 0, 0.5); /* Translucent green dots */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: green; /* Solid green for active and hover */
+}
+.section {
+    padding: 20px;
+    text-align: left; /* Change text alignment to left */
+    background-color: white; /* White background for sections */
+}
+.section h2 {
+    text-align: left; /* Change heading alignment to left */
+    color: green; /* Green color for headings */
+}
+.card-container {
+    display: flex;
+    justify-content: flex-start; /* Align cards to the left */
+    flex-wrap: wrap;
+}
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Increase roundedness */
+    padding: 16px;
+    text-align: left; /* Change text alignment to left */
+    margin: 10px;
+    width: 200px;
+    background-color: #f5f5dc; /* Tan/Beige background for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add drop shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+}
+.card:hover {
+    transform: translateY(-10px); /* Slightly lift the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+.card img {
+    width: 100%;
+    border {
+        width: 100%;
+        border-radius: 10px; /* Match the card's rounded corners */
+    }
+    .card h3 {
+        margin: 10px 0 5px;
+        color: green; /* Green color for card titles */
+    }
+    .card p {
+        margin: 0;
+        color: #333; /* Darker text for card descriptions */
+    }
+}
